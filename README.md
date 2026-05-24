@@ -1,4 +1,4 @@
-# MCP Weather Application
+# Weather Chatbot AI Application 
 
 A full-stack application demonstrating the Model Context Protocol (MCP) architecture with a weather service powered by the National Weather Service API.
 
