@@ -223,6 +223,64 @@ ollama serve
 # Runs on localhost:11434
 ```
 
+## Assistant UI Usage
+
+Once the application is running, you can access the web interface at `http://localhost:5173`.
+
+### Getting Started
+
+1. **Open the Web Interface**
+   - Navigate to `http://localhost:5173` in your browser
+   - You'll see the weather chatbot interface
+
+2. **Interact with the Assistant**
+   - Type natural language queries in the input field
+   - Examples:
+     - "What's the weather forecast for Sacramento, California?"
+     - "Get alerts for California"
+     - "Show me the forecast for latitude 38.5816, longitude -121.4944"
+
+### Features
+
+- **Natural Language Input**: Ask questions about weather in plain English
+- **Tool Discovery**: The assistant automatically discovers available tools from MCP servers
+- **Real-time Responses**: Get instant weather data from the National Weather Service
+- **Chat History**: View conversation history (if implemented)
+- **Error Handling**: Clear error messages if something goes wrong
+
+### Example Interactions
+
+**Query 1: Get Weather Alerts**
+```
+User: "What are the active alerts for New York?"
+Assistant: Fetches alerts using get_alerts("NY") tool
+Response: Displays active alerts for NY state
+```
+
+**Query 2: Get Weather Forecast**
+```
+User: "What's the weather forecast for San Francisco?"
+Assistant: Uses get_forecast(37.7749, -122.4194) tool
+Response: Displays 7-day forecast with temperature, wind, conditions
+```
+
+### UI Components
+
+- **Input Field**: Text box for user queries
+- **Chat Display**: Message history with user queries and assistant responses
+- **Tool Information**: Shows which tools are being invoked
+- **Status Indicators**: Displays loading state during API calls
+- **Error Messages**: Clear error feedback if tools fail
+
+### Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| No response from assistant | Verify backend is running (`npm run dev` in backend folder) |
+| Tool not found | Check `.vscode/mcp.json` configuration and MCP server status |
+| Coordinates not recognized | Ensure using valid US coordinates (NWS only covers US) |
+| Loading spinner stuck | Check browser console for errors, restart backend |
+
 ## Technology Stack
 
 ### Frontend
