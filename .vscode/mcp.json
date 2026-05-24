@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "weather": {
+      "command": "node",
+      "args": ["/weather-server/build/index.js"]
+    }
+  }
+}
